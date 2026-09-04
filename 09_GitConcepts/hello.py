@@ -1,2 +1,1 @@
-print("Hello Git Practice!")
-print("Testing branch workflow")
+print("Hello from Feature A!")
