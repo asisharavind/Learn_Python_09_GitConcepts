@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Framework Runner",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/08_Unified_Framework_Utility/runner.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--suite=smoke",
+                "--env=staging"
+            ]
+        },
+        {
+            "name": "Debug PyTest Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}",
+                "-s"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
+// What does this file do ?
+// "name": The label that appears in the top-left debugger dropdown menu.
+// "type": "debugpy": Tells VS Code to use Microsoft's official Python debugging engine.
+// "request": "launch": Starts a brand-new debugging process (as opposed to attaching to an already-running app).
+// "module": "pytest": Instead of executing your script via raw Python (python test_suite1.py), it executes it through PyTest (python -m pytest).
+// "args": ["${file}", "-s"]:
+// "${file}": A dynamic variable representing whichever file tab you currently have focused in VS Code (e.g., test_suite1.py).
+// "-s": Tells PyTest to print live output (like your [TC001_Login] statements) directly to the console instead of capturing and hiding them.
+// "console": "integratedTerminal": Directs all execution logs to the VS Code terminal tab at the bottom of your screen.
+
+
+// Importance of  line 8: "module": "pytest".
+// This setting tells VS Code: "Do NOT execute this file as a plain Python script (python test.py). 
+// Execute it using the PyTest engine (pytest test.py)."
+
+// Because PyTest is the designated test runner, it enforces its automatic discovery rules:
+// Rule 1 (Files): PyTest searches for files named test_*.py or *_test.py.
+// Rule 2 (Functions): PyTest scans inside those files and ONLY executes functions starting with test_.

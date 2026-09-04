@@ -1,0 +1,17 @@
+{
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "."
+    ]
+}
+
+#===> How .vscode/ & settings.json Got Created
+#VS Code keeps project-specific configurations completely separate from your global editor settings.
+#Folder Creation: When you clicked "Configure Python Tests" earlier in the Testing panel, VS Code automatically created a hidden directory named .vscode at the root of your workspace.
+#File Generation: VS Code then created settings.json inside .vscode to store your choice (pytest).
+
+#===>What settings.json Does
+#"python.testing.unittestEnabled": false: Turns off Python's built-in unittest runner so VS Code doesn't waste CPU cycles looking for unittest files.
+#"python.testing.pytestEnabled": true: Activates the PyTest integration in VS Code.
+#"python.testing.pytestArgs": ["."]: Tells PyTest to scan the root project directory (.) to discover any test_*.py files.

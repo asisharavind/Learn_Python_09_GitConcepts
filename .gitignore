@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+output_reports/
+
+# Ignore .vscode folder contents...
+.vscode/*
+# ...but track launcher configurations
+!.vscode/launch.json
+!.vscode/settings.json
