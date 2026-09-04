@@ -1,3 +1,4 @@
 print("Hello from Feature A!")
 print("Hello from Feature B!")
-print("Testing commit -a directly")
+print("Testing commit -a shortcut directly")
+print("Learning commit amend")
